@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SIET-LMS | Login</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favi.jpg" type="image/jpeg" />
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Layout */
+      .container {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+      }
+
+      /* Left section */
+      .left-section {
+        flex: 1;
+        background-color: #004d00;
+        color: #ffff00;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: justify;
+      }
+
+      .left-section h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+      }
+
+      .left-section p,
+      .left-section ul {
+        font-size: 1.2rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+
+      .left-section ul {
+        margin-left: 1.2rem;
+        font-size: 1.1rem;
+      }
+
+      .left-section ul li {
+        margin-bottom: 0.7rem;
+      }
+
+      /* Right section */
+      .right-section {
+        flex: 1;
+        background-color: #f7e035;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      /* Login card */
+      .login-container {
+        background: #e6ffe6;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 15px rgba(0, 128, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .login-logo {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+        margin: 0 auto 1.5rem;
+        object-fit: contain;
+        background-color: white;
+      }
+
+      /* Error message */
+      #error-message {
+        color: red;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        display: none;
+      }
+
+      /* Inputs */
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1.2rem;
+        border: 2px solid #a3c65f;
+      }
+
+      /* Button */
+      button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #388e3c;
+      }
+
+      /* Forgot password */
+      .forgot-password {
+        text-align: right;
+        margin-top: -0.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .forgot-password a {
+        color: #006400;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .forgot-password a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .left-section,
+        .right-section {
+          width: 100%;
+          padding: 2rem 1rem;
+        }
+
+        .left-section {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- LEFT -->
+      <div class="left-section">
+        <h1>Welcome to SIET-LMS</h1>
+        <p>
+          The
+          <strong
+            >Sri Shakthi Institute of Engineering and Technology Learning
+            Management System (SIET-LMS)</strong
+          >
+          is a centralized platform designed to support students in learning,
+          practicing, and preparing for academic and competitive programming
+          activities.
+        </p>
+
+        <p><strong>SIET-LMS Provides</strong></p>
+        <ul>
+          <li>Structured programming practice across multiple subjects.</li>
+          <li>Hands-on coding exercises with real-time feedback.</li>
+          <li>Progress tracking and performance insights.</li>
+          <li>A secure environment integrated with Safe Exam Browser.</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right-section">
+        <div class="login-container">
+          <img src="favi.jpg" alt="SIET-LMS Logo" class="login-logo" />
+
+          <div id="error-message">Invalid credentials (demo message)</div>
+
+          <!-- Frontend-only form -->
+          <form onsubmit="handleLogin(event)">
+            <input type="text" placeholder="Username" required />
+            <input type="password" placeholder="Password" required />
+
+            <div class="forgot-password">
+              <a href="#">Forgot Password?</a>
+            </div>
+
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function handleLogin(event) {
+        event.preventDefault();
+
+        // FRONTEND DEMO ONLY
+        // Later replace with backend authentication
+        document.getElementById("error-message").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
