@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+====================================================================
+  SEB Configuration: EXAM MODE (STRICT / MAXIMUM SECURITY)
+  SIET-LMS — Sri Shakthi Institute of Engineering and Technology
+
+  LAUNCH: Double-click open_exam.bat  OR  this file directly
+
+  Flow: SEB opens → login.php → mode.php → launch_exam.php → exam.php
+        (Everything stays inside SEB — full kiosk lockdown)
+
+  Restrictions (MAXIMUM SECURITY):
+  ✅ localhost only — no internet access
+  ✅ Full-screen kiosk mode (browserViewMode=1)
+  ❌ No address bar
+  ❌ No navigation (back/forward/reload)
+  ❌ No Alt+Tab, Alt+F4, Ctrl+Esc, Alt+Esc
+  ❌ No Print Screen
+  ❌ No right-click
+  ❌ No spell check
+  ❌ No external websites
+  ❌ No task bar / menu bar
+  ❌ No zoom
+  ❌ No multiple displays
+  ❌ No WLAN access
+  ❌ No F5 reload
+
+  QUIT PASSWORD: exit456
+  (SHA-256: dbfeb3b06e96424bc40951623ddeba55e162ad41bf5049188acd5aa7e17a4b43)
+====================================================================
+-->
+<plist version="1.0">
+<dict>
+
+  <!-- ══ START URL: Login page (enforced inside SEB) ══════════ -->
+  <key>startURL</key>
+  <string>http://localhost/SEB-LMS-portal/exam_select.php</string>
+
+  <!-- ══ WINDOW — full-screen kiosk ═════════════════════════ -->
+  <key>browserWindowPositioning</key>
+  <integer>2</integer>
+
+  <!-- 1 = full screen kiosk mode (most secure) -->
+  <key>browserViewMode</key>
+  <integer>1</integer>
+
+  <key>showMenuBar</key>
+  <false/>
+
+  <key>showTaskBar</key>
+  <false/>
+
+  <!-- ══ BROWSER RESTRICTIONS ════════════════════════════════ -->
+  <key>browserWindowAllowAddressBar</key>
+  <false/>
+
+  <key>browserWindowAllowNavigation</key>
+  <false/>
+
+  <key>browserWindowShowReloadButton</key>
+  <false/>
+
+  <key>newBrowserWindowByLinkPolicy</key>
+  <integer>2</integer>
+
+  <key>newBrowserWindowByScriptPolicy</key>
+  <integer>2</integer>
+
+  <key>enableZoomPage</key>
+  <false/>
+
+  <!-- ══ URL FILTER — localhost only ═════════════════════════ -->
+  <key>URLFilterEnable</key>
+  <true/>
+
+  <key>URLFilterEnableContentFilter</key>
+  <true/>
+
+  <key>URLFilterRules</key>
+  <array>
+    <!-- Allow localhost -->
+    <dict>
+      <key>action</key>    <integer>1</integer>
+      <key>active</key>    <true/>
+      <key>expression</key><string>localhost</string>
+      <key>regex</key>     <false/>
+    </dict>
+    <!-- Allow 127.0.0.1 -->
+    <dict>
+      <key>action</key>    <integer>1</integer>
+      <key>active</key>    <true/>
+      <key>expression</key><string>127.0.0.1</string>
+      <key>regex</key>     <false/>
+    </dict>
+    <!-- Allow Google Fonts (for UI) -->
+    <dict>
+      <key>action</key>    <integer>1</integer>
+      <key>active</key>    <true/>
+      <key>expression</key><string>fonts.googleapis.com</string>
+      <key>regex</key>     <false/>
+    </dict>
+    <dict>
+      <key>action</key>    <integer>1</integer>
+      <key>active</key>    <true/>
+      <key>expression</key><string>fonts.gstatic.com</string>
+      <key>regex</key>     <false/>
+    </dict>
+    <!-- Block everything else -->
+    <dict>
+      <key>action</key>    <integer>0</integer>
+      <key>active</key>    <true/>
+      <key>expression</key><string>.*</string>
+      <key>regex</key>     <true/>
+    </dict>
+  </array>
+
+  <!-- ══ KEYBOARD / SYSTEM RESTRICTIONS ════════════════════ -->
+  <key>enablePrintScreen</key>
+  <false/>
+
+  <key>enableAltEsc</key>
+  <false/>
+
+  <key>enableAltF4</key>
+  <false/>
+
+  <key>enableCtrlEsc</key>
+  <false/>
+
+  <key>enableAltTab</key>
+  <false/>
+
+  <key>enableStartMenu</key>
+  <false/>
+
+  <key>enableRightMouse</key>
+  <false/>
+
+  <key>enableF5Reload</key>
+  <false/>
+
+  <!-- ══ NETWORK ════════════════════════════════════════════ -->
+  <key>allowWlan</key>
+  <false/>
+
+  <!-- ══ MISC ══════════════════════════════════════════════ -->
+  <key>allowSpellCheck</key>
+  <false/>
+
+  <key>allowedDisplayBuiltin</key>
+  <true/>
+
+  <key>allowedDisplaysMaxNumber</key>
+  <integer>1</integer>
+
+  <!-- ══ QUIT PASSWORD: exit456 ═════════════════════════════ -->
+  <key>hashedQuitPassword</key>
+  <string>dbfeb3b06e96424bc40951623ddeba55e162ad41bf5049188acd5aa7e17a4b43</string>
+
+</dict>
+</plist>

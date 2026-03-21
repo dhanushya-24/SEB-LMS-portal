@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+====================================================================
+  SEB Configuration: PRACTICE MODE
+  SIET-LMS — Sri Shakthi Institute of Engineering and Technology
+
+  LAUNCH: Double-click open_practice.bat  OR  this file directly
+
+  Flow: SEB opens → login.php → mode.php → practice.php
+        (Everything stays inside SEB — no regular browser allowed)
+
+  Restrictions:
+  ✅ localhost navigation allowed
+  ✅ Code editor allowed
+  ✅ Scrolling allowed
+  ❌ External websites blocked
+  ❌ New tabs blocked
+  ❌ Print screen blocked
+  ❌ Alt+Tab blocked
+
+  QUIT PASSWORD: exit456
+====================================================================
+-->
+<plist version="1.0">
+<dict>
+
+  <!-- ══ START URL: Login page (enforced inside SEB) ══════════ -->
+  <key>startURL</key>
+  <string>http://localhost/SEB-LMS-portal/practice_seb_entry.php</string>
+
+  <!-- ══ WINDOW — maximized, no address bar ═══════════════════ -->
+  <key>browserWindowPositioning</key>
+  <integer>2</integer>
+
+  <key>browserViewMode</key>
+  <integer>0</integer>
+
+  <key>showMenuBar</key>
+  <false/>
+
+  <key>showTaskBar</key>
+  <false/>
+
+  <!-- ══ BROWSER RESTRICTIONS ════════════════════════════════ -->
+  <key>browserWindowAllowAddressBar</key>
+  <false/>
+
+  <key>browserWindowShowReloadButton</key>
+  <false/>
+
+  <key>newBrowserWindowByLinkPolicy</key>
+  <integer>2</integer>
+
+  <key>newBrowserWindowByScriptPolicy</key>
+  <integer>2</integer>
+
+  <!-- ══ URL FILTER ══════════════════════════════════════════ -->
+  <key>URLFilterEnable</key>
+  <true/>
+
+  <key>URLFilterEnableContentFilter</key>
+  <true/>
+
+  <key>URLFilterRules</key>
+  <array>
+    <!-- Allow localhost -->
+    <dict>
+      <key>action</key>    <integer>1</integer>
+      <key>active</key>    <true/>
+      <key>expression</key><string>localhost</string>
+      <key>regex</key>     <false/>
+    </dict>
+    <!-- Allow 127.0.0.1 -->
+    <dict>
+      <key>action</key>    <integer>1</integer>
+      <key>active</key>    <true/>
+      <key>expression</key><string>127.0.0.1</string>
+      <key>regex</key>     <false/>
+    </dict>
+    <!-- Allow Google Fonts (for UI rendering) -->
+    <dict>
+      <key>action</key>    <integer>1</integer>
+      <key>active</key>    <true/>
+      <key>expression</key><string>fonts.googleapis.com</string>
+      <key>regex</key>     <false/>
+    </dict>
+    <dict>
+      <key>action</key>    <integer>1</integer>
+      <key>active</key>    <true/>
+      <key>expression</key><string>fonts.gstatic.com</string>
+      <key>regex</key>     <false/>
+    </dict>
+    <!-- Block everything else -->
+    <dict>
+      <key>action</key>    <integer>0</integer>
+      <key>active</key>    <true/>
+      <key>expression</key><string>.*</string>
+      <key>regex</key>     <true/>
+    </dict>
+  </array>
+
+  <!-- ══ KEYBOARD / SYSTEM RESTRICTIONS ════════════════════ -->
+  <key>enablePrintScreen</key>
+  <false/>
+
+  <key>enableAltF4</key>
+  <false/>
+
+  <key>enableAltTab</key>
+  <false/>
+
+  <key>enableRightMouse</key>
+  <false/>
+
+  <key>allowSpellCheck</key>
+  <false/>
+
+  <key>allowedDisplayBuiltin</key>
+  <true/>
+
+  <!-- ══ QUIT PASSWORD: exit456 ═════════════════════════════ -->
+  <key>hashedQuitPassword</key>
+  <string>dbfeb3b06e96424bc40951623ddeba55e162ad41bf5049188acd5aa7e17a4b43</string>
+
+</dict>
+</plist>
